@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Drowsiness Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            box-sizing: border-box;
+            background-color: rgb(23, 173, 160);
+            background-size: cover;
+        }
+
+        h1 {
+            color: #f10c0c;
+        }
+
+        .form-container {
+            border: 5px solid red; /* Add red border to the container */
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color:black;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 15px; /* Increase padding for larger size */
+            margin: 10px; /* Increase margin for larger size */
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            width: 300px; /* Increase width for larger size */
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Driver Drowsiness Detection</h1>
+    <div class="form-container">
+        <form action="http://127.0.0.1:5000/live" method="post">
+            <label>To detect on live:</label>
+            <input type="submit" value="Activate">
+        </form>
+        <form action="http://127.0.0.1:5000/image" method="post">
+            <label>Image Path:</label>
+            <input type="text" name="path">
+            <input type="submit" value="Submit">
+        </form>
+        <form action="http://127.0.0.1:5000/video" method="post">
+            <label>Video Path:</label>
+            <input type="text" name="path">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
